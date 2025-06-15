@@ -1,0 +1,11 @@
+#!/bin/sh
+
+pdfresize ()
+{
+    echo "resizing pdf to A4 portrait"
+    gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dSAFER -dCompatibilityLevel="1.5" -dPDFSETTINGS="/printer" -dColorConversionStrategy=/LeaveColorUnchanged -dSubsetFonts=true -dEmbedAllFonts=true -dDEVICEWIDTHPOINTS=595 -dDEVICEHEIGHTPOINTS=842 -dAutoRotatePages='/PageByPage' -dFIXEDMEDIA -dPDFFitPage -sOutputFile=$1.resized.pdf -f $1;
+}
+
+echo "running resize"
+echo $1
+pdfresize $1;
