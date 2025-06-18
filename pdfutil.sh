@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME="ghostscript-image"
+IMAGE_NAME="pdf-util"
 MOUNT_DIR="$(pwd)"
 
 # Prompt the user
