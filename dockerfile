@@ -8,8 +8,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # copy compress and resize command scripts
-COPY ghostscripts/pdfcompress /bin
-COPY ghostscripts/pdfresize /bin
+COPY scripts/pdfcompress /bin
+COPY scripts/pdfresize /bin
 
 RUN chmod 777 /bin/pdfcompress && chmod 777 bin/pdfresize
 

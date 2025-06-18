@@ -4,12 +4,12 @@
 docker build -t ghostscript-image .
 ```
 
-### Run the compression
+### Run the pdf utility
 
-make sure the file you want to compress is in the project root directory 
+make sure the file you want to perform actions on, is in the project root directory 
 
 ```bash
-./compress-pdf.sh form.pdf
+./pdfutil.sh form.pdf
 ```
 
 #### Alternatively

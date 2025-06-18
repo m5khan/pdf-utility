@@ -1,0 +1,17 @@
+#!/bin/bash
+
+pdfresize ()
+{
+    echo "resizing pdf to A4 portrait"
+    gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dSAFER -dCompatibilityLevel="1.5" -dPDFSETTINGS="/printer" -dColorConversionStrategy=/LeaveColorUnchanged -dSubsetFonts=true -dEmbedAllFonts=true -dDEVICEWIDTHPOINTS=595 -dDEVICEHEIGHTPOINTS=842 -dAutoRotatePages='/PageByPage' -dFIXEDMEDIA -dPDFFitPage -sOutputFile=$OUTPUT -f $INPUT;
+}
+
+INPUT="$1"
+OUTPUT="$2"
+
+echo "running pdf resize"
+if [[ -z "$INPUT" || -z "$OUTPUT" ]]; then
+  echo "Usage: $0 input.pdf output.pdf"
+  exit 1
+fi
+pdfresize $1 $2;
