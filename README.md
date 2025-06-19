@@ -24,6 +24,8 @@ Docker is required for this project to run.
 docker build -t pdf-util .
 ```
 
+**Note:** If you name the image something other than *pdf-util* then make sure to change the `IMAGE_NAME` in *pdfutil.sh* file also.
+
 ### Unix CLI
 
 make sure the file you want to perform actions on, is in the project root directory 
