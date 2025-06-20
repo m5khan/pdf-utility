@@ -1,4 +1,4 @@
-# PDF-Util
+# PDF-Utility
 
 PDF-Util is a docker container based CLI tool which provides pdf utilities such as:
 
