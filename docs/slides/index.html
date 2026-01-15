@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>How to Create a Docker-Based CLI Tool</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/black.css" />
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/monokai.css" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+
+        <section>
+          <h2>How to Create a Docker-Based CLI Tool</h2>
+          <p>PDF utilities using Docker</p>
+        </section>
+
+        <section>
+          <h2>Prologue</h2>
+          <p>
+            Application to a public office (Office of Foreign Affairs).
+            They requested a long list of documents.
+          </p>
+        </section>
+
+        <section>
+          <h2>Problem</h2>
+          <p>How to send many documents to the public office?</p>
+        </section>
+
+        <section>
+          <h3>Step 1</h3>
+          <p>Scan the documents</p>
+          <p><em>A lot of documents</em></p>
+          <img src="https://i.makeagif.com/media/12-02-2015/Sk8lEc.gif" />
+        </section>
+
+        <section>
+          <h3>Step 2</h3>
+          <p>Convert scanned images into PDF format</p>
+        </section>
+
+        <section>
+          <h3>Step 3</h3>
+          <p>Add PDF files as email attachments</p>
+          <img src="attachment.png" />
+        </section>
+
+        <section>
+          <h3>Step 4</h3>
+          <p>Send the email</p>
+        </section>
+
+        <section>
+          <h3>Step 5</h3>
+          <p>Receive a response</p>
+          <img src="large-attachment.png" />
+        </section>
+
+        <section>
+          <h2>Attachment Size Issue</h2>
+          <ul>
+            <li>Total size: 20–25 MB</li>
+            <li>Some scanned documents: ~10 MB</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Reducing PDF File Size</h2>
+          <ul>
+            <li>Search online for PDF compression methods</li>
+            <li>
+              Avoid uploading PDFs with sensitive data to third-party servers
+            </li>
+          </ul>
+          <img src="google-results.png" />
+        </section>
+
+        <section>
+          <h2>Manual Optimization</h2>
+          <ul>
+            <li>Reduce image size using tools like GIMP</li>
+            <li>Convert images to PDF again</li>
+            <li>Too much work for many documents</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Linux-Based CLI Tools</h2>
+          <p>After investigation, found two useful libraries:</p>
+          <ul>
+            <li>Ghostscript</li>
+            <li>Poppler-utils</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Docker-Based CLI Tool</h2>
+          <p>
+            Avoid installing multiple libraries on the host Linux system
+          </p>
+          <p>
+            Solution: Package everything into a Docker-based CLI tool
+          </p>
+        </section>
+
+        <section>
+          <h2>PDF-Util</h2>
+          <p>
+            A Docker-based CLI tool to manipulate PDF files
+          </p>
+          <p>
+            <a href="https://github.com/m5khan/pdf-utility" target="_blank">
+              https://github.com/m5khan/pdf-utility
+            </a>
+          </p>
+        </section>
+
+        <section>
+          <h2>To Do</h2>
+          <ul>
+            <li>Image to PDF conversion</li>
+            <li>PDF to image conversion</li>
+            <li>Additional PDF operations</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Thank You</h2>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/highlight/highlight.js"></script>
+
+    <script>
+      Reveal.initialize({
+        hash: true,
+        plugins: [RevealHighlight]
+      });
+    </script>
+  </body>
+</html>
